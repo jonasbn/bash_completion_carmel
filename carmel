@@ -1,0 +1,58 @@
+#
+#  Completion for perlbrew:# Usage:
+#
+#       # Run with a directory with cpanfile or cpanfile.snapshot
+#       carmel install
+
+#       # Manually pull a module if you don't have it
+#       carmel inject DBI@1.633 Plack@1.0000
+
+#       # list all the modules to be loaded
+#       carmel list
+
+#       # list all the modules in a tree
+#       carmel tree
+
+#       # show a location where a module is installed
+#       carmel show Plack
+
+#       # update snapshot
+#       carmel update
+
+#       # Runs your perl script with modules from artifacts
+#       carmel exec perl ...
+
+#       # Requires all your modules in cpanfile in one shot
+#       carmel exec perl -e 'use Carmel::Preload;'
+
+#       # Roll out the currently selected modules into ./local
+#       carmel rollout
+
+#       # package modules tarballs and index into ./vendor/cache
+#       carmel package
+
+#       # use Carmel packages inside a script (without carmel exec)
+#       perl -e 'use Carmel::Setup; ...'
+
+#       # prints export PATH=... etc for shell scripting
+#       carmel export
+
+#       # find a module in a repository
+#       carmel find DBI
+
+#       # find a module matching the version query
+#       carmel find Plack ">= 1.0000, < 1.1000"
+
+_carmel()
+{
+    local cur prev opts
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    opts=$(carmel --help | sed -e 's/#.*$//;/^$/d;/^[[:space:]]*$/d;/perl/d;/Carmel/d;/Usage:/d' -e 's/[:space]*carmel \([[:alnum:]]*\).*/\1/')
+
+    COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+}
+
+complete -F _carmel carmel
