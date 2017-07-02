@@ -2,6 +2,8 @@
 
 Basic tab completion for [Carmel](https://github.com/miyagawa/Carmel).
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Introduction
 
 Based on Carmel version v0.1.34
