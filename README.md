@@ -92,9 +92,7 @@ $ source /usr/local/share/bash-completion/completions/carmel
 
 ## Motivation
 
-I have a huge list of `carmel` library installations and I tend to keep the names long and descriptive, so it seemed like tab completion was an interesting alternative to the __flow breaking copy-pasting__ and error prone typing away.
-
-The programmatic capabilities of `bash` are truly powerful and useful and can be put to good use in use-cases like this.
+I have just started to get my feet wet with `carmel`, so I thought I might aswell implement `bash` completions, since I implemented completions for `carton`.
 
 ## See Also
 
