@@ -1,0 +1,11 @@
+{
+    "folders":
+    [
+        {
+            "path": "."
+        }
+    ],
+    "syntax_override": {
+        "carmel$": [ "ShellScript", "Shell-Unix-Generic" ]
+    }
+}
